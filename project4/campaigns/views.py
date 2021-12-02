@@ -1,6 +1,7 @@
 from django.shortcuts import render
 
 # Create your views here.
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from django.http import HttpResponse
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -13,6 +14,8 @@ def home(request):
     return HttpResponse('Hello world!')
 
 class CampaignDetailView(APIView):
+    permission_classes = (IsAuthenticatedOrReadOnly)
+    
     def get(self, request, pk):
         try:
             campaign = Campaign.objects.get(id=pk)
@@ -42,6 +45,7 @@ class CampaignDetailView(APIView):
 
 
 class CampaignListView(APIView):
+    permission_classes = (IsAuthenticatedOrReadOnly)
     # /GET all campaigns
     def get(self, request):
         try:
@@ -55,7 +59,7 @@ class CampaignListView(APIView):
         try:
             campaign = CampaignSerializer(data=request.data)
             if campaign.is_valid():
-                campaign.save()
+                campaign.save(owner=[request.user])
                 return Response(campaign.data, status=status.HTTP_201_CREATED)
         except:
             return Response(campaign.errors, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
