@@ -14,7 +14,7 @@ def home(request):
     return HttpResponse('Hello world!')
 
 class CampaignDetailView(APIView):
-    permission_classes = (IsAuthenticatedOrReadOnly)
+    permission_classes = (IsAuthenticatedOrReadOnly,)
     
     def get(self, request, pk):
         try:
@@ -45,7 +45,7 @@ class CampaignDetailView(APIView):
 
 
 class CampaignListView(APIView):
-    permission_classes = (IsAuthenticatedOrReadOnly)
+    permission_classes = (IsAuthenticatedOrReadOnly,)
     # /GET all campaigns
     def get(self, request):
         try:
@@ -59,8 +59,8 @@ class CampaignListView(APIView):
         try:
             campaign = CampaignSerializer(data=request.data)
             if campaign.is_valid():
-                campaign.save(owner=[request.user])
+                campaign.save(owner=request.user)
                 return Response(campaign.data, status=status.HTTP_201_CREATED)
         except:
-            return Response(campaign.errors, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
+            return Response(status=status.HTTP_422_UNPROCESSABLE_ENTITY)
 

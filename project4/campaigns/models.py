@@ -1,5 +1,6 @@
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
+from django.db.models.deletion import CASCADE
 
 # Create your models here.
 class Campaign(models.Model):
@@ -18,6 +19,7 @@ class Campaign(models.Model):
     created_on = models.DateField(auto_now_add=True)
     duration = models.IntegerField(default=60, validators=[MaxValueValidator(90)])
     supporters = models.ManyToManyField("jwt_auth.User", blank=True)
+    owner = models.ForeignKey('jwt_auth.User', null=True, on_delete=CASCADE, related_name='owner_id')
 
     def __str__(self):
 	    return self.title
