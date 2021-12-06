@@ -13,13 +13,16 @@ const Login = () => {
   }
   console.log(login)
 
-  const handleSubmit = () => loginUser(login)
+  const handleSubmit = (event) => {
+    event.preventDefault
+    loginUser(login)
+  }
 
   return (
     <>
       <h1>Log in</h1>
       <div>
-        <form onSubmit={handleSubmit}>
+        <form>
           <input
             placeholder='email'
             type='email'
@@ -34,7 +37,9 @@ const Login = () => {
             value={login.password || ''}
             onChange={handleChange}
           ></input>
-          <button type='submit'>Submit</button>
+          <button type='button' onClick={handleSubmit}>
+            Submit
+          </button>
         </form>
       </div>
     </>

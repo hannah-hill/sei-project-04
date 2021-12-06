@@ -1,9 +1,9 @@
 header {
   height: 80px;
   width: 100%;
-  background-color: darkolivegreen;
   margin: 0;
   padding: 0;
+  border-bottom: 2px solid lightgrey;
 
   .header-container {
     width: 100%;
@@ -13,6 +13,10 @@ header {
     justify-content: space-between;
     align-items: center;
     text-align: center;
+
+    h1 {
+      color: #ffa62b;
+    }
 
     .header-left {
       width: 30%;
@@ -24,4 +28,8 @@ header {
       width: 30%;
     }
   }
+}
+
+.hamburger-react {
+  z-index: 1046;
 }

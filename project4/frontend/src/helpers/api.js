@@ -41,3 +41,20 @@ export const loginUser = async (data) => {
     console.log(err)
   }
 }
+
+export const registerUser = async (data) => {
+  const config = {
+    method: 'post',
+    url: `${baseUrl}/auth/signup/`,
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: data,
+  }
+  try {
+    const response = await axios(config)
+    console.log(response)
+  } catch (err) {
+    console.log(err)
+  }
+}
