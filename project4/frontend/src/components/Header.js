@@ -13,7 +13,7 @@ const Header = ({ loggedIn, handleLogout }) => {
             </div>
           </div>
           <div className='header-centre'>
-            <h1>CROWDFUND</h1>
+            <h1>Seedling</h1>
           </div>
           <div className='header-right'>
             {loggedIn ? (

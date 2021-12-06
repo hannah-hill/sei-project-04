@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { Cross as Hamburger } from 'hamburger-react'
 import Offcanvas from 'react-bootstrap/Offcanvas'
 
@@ -11,12 +12,18 @@ const Nav = () => {
   return (
     <>
       <Hamburger toggled={show} toggle={handleShow} />
-
       <Offcanvas show={show} onHide={handleClose}>
         <Offcanvas.Header></Offcanvas.Header>
         <Offcanvas.Body>
-          Some text as placeholder. In real life you can have the elements you
-          have chosen. Like, text, images, lists, etc.
+          <nav>
+            <ul className='nav-list'>
+              <Link to='/campaigns'>
+                <li>Browse campaigns</li>
+              </Link>
+              <li>Start a campaign</li>
+              <li>Categories</li>
+            </ul>
+          </nav>
         </Offcanvas.Body>
       </Offcanvas>
     </>

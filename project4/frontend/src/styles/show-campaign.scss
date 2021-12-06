@@ -1,0 +1,52 @@
+.show-header {
+  height: 100px;
+  padding: 20px;
+  text-align: left;
+}
+
+.show-details {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  flex-direction: row;
+  padding-top: 30px;
+  box-sizing: border-box;
+
+  .img-container {
+    width: 50%;
+    border-right: 2px solid lightgrey;
+    text-align: center;
+    border: 1px solid black;
+
+    img {
+      height: 350px;
+      margin: 0 auto;
+    }
+  }
+  .status-container {
+    width: 50%;
+    padding: 20px;
+    border: 1px black solid;
+  }
+  .progress {
+    height: 30px;
+  }
+}
+
+.campaign-tabs {
+  .nav-tabs {
+    border: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+
+    .nav-item {
+      border: none;
+    }
+
+    .nav-link,
+    .active {
+      border: none;
+    }
+  }
+}

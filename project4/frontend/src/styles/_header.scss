@@ -15,7 +15,8 @@ header {
     text-align: center;
 
     h1 {
-      color: #ffa62b;
+      color: $main;
+      font-family: $logo;
     }
 
     .header-left {
@@ -23,6 +24,15 @@ header {
     }
     .header-right {
       width: 30%;
+      display: flex;
+      justify-content: right;
+      align-items: center;
+
+      button {
+        border: none;
+        background: none;
+        padding: 0 10px;
+      }
     }
     .header-center {
       width: 30%;
