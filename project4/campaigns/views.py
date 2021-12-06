@@ -7,7 +7,9 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 
+
 from .models import Campaign
+from jwt_auth.models import User
 from .serializers import CampaignSerializer, PopulatedCampaignSerializer
 
 def home(request):
@@ -63,4 +65,13 @@ class CampaignListView(APIView):
                 return Response(campaign.data, status=status.HTTP_201_CREATED)
         except:
             return Response(status=status.HTTP_422_UNPROCESSABLE_ENTITY)
+
+class PledgeView(APIView):
+    def post(self, request, pk):
+        try:
+            campaign = Campaign.objects.get(id=pk)
+            campaign.supporters.add(request.user.id)
+            return Response(status=status.HTTP_202_ACCEPTED)
+        except:
+            return Response(status=status.HTTP_400_BAD_REQUEST)
 
