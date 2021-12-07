@@ -7,8 +7,10 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 
-from .models import Campaign
-from .serializers import CampaignSerializer, PopulatedCampaignSerializer
+
+from .models import Campaign, CampaignSupporters
+from jwt_auth.models import User
+from .serializers import CampaignSerializer, CampaignSupportersSerializer, PopulatedCampaignSerializer
 
 def home(request):
     return HttpResponse('Hello world!')
@@ -32,7 +34,7 @@ class CampaignDetailView(APIView):
                 updated_campaign.save()
                 return Response(updated_campaign.data, status=status.HTTP_202_ACCEPTED)
         except:
-            return Response(updated_campaign.errors, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
+            return Response(campaign.errors, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
     
     def delete(self, request, pk):
         try:
@@ -58,9 +60,32 @@ class CampaignListView(APIView):
     def post(self, request):
         try:
             campaign = CampaignSerializer(data=request.data)
+            print(request.POST)
+            print(campaign)
             if campaign.is_valid():
                 campaign.save(owner=request.user)
                 return Response(campaign.data, status=status.HTTP_201_CREATED)
         except:
             return Response(status=status.HTTP_422_UNPROCESSABLE_ENTITY)
+
+# class PledgeView(APIView):
+#     def post(self, request, pk):
+#         try:
+#             campaign = Campaign.objects.get(id=pk)
+#             campaign.supporters.add({"user": request.user.id, "value": request.data.value })
+#             return Response(status=status.HTTP_202_ACCEPTED)
+#         except:
+#             return Response(status=status.HTTP_400_BAD_REQUEST)
+
+class PledgeView(APIView):
+    def post(self, request, pk):
+        try:
+            campaign = Campaign.objects.get(id=pk).id
+            value = request.data['value']
+            user = request.user.id
+            print('HELLO,', campaign, user, value)
+            newPledge = CampaignSupporters.objects.create(user=user, value=value, campaign=campaign)
+            return Response(newPledge, status=status.HTTP_202_ACCEPTED)
+        except:
+            return Response(status=status.HTTP_400_BAD_REQUEST)
 
