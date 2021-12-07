@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from jwt_auth.models import User
 from jwt_auth.serializers import UserSerializer
-from .models import Campaign
+from .models import Campaign, CampaignSupporters
 
 class CampaignSerializer(serializers.ModelSerializer):
     class Meta:
@@ -10,3 +10,8 @@ class CampaignSerializer(serializers.ModelSerializer):
 
 class PopulatedCampaignSerializer(CampaignSerializer):
     supporters = UserSerializer(many=True)
+
+class CampaignSupportersSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CampaignSupporters
+        fields = '__all__'

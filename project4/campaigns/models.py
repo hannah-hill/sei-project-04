@@ -30,7 +30,6 @@ class CampaignSupporters(models.Model):
     campaign = models.ForeignKey("campaigns.Campaign", on_delete=models.CASCADE)
     user = models.ForeignKey("jwt_auth.User", on_delete=models.CASCADE)
     value = models.IntegerField()
-    date = models.DateField(auto_now_add=True)
 
 
     
