@@ -1,7 +1,16 @@
 .show-header {
-  height: 100px;
-  padding: 20px;
+  height: 70px;
+  padding: 10px 60px;
   text-align: left;
+
+  h2 {
+    font-size: 22px;
+    padding: 10px 0 0 0;
+    text-align: left;
+  }
+  h3 {
+    font-size: 18px;
+  }
 }
 
 .show-details {
@@ -13,23 +22,45 @@
   box-sizing: border-box;
 
   .img-container {
-    width: 50%;
+    height: 100%;
+    width: 65%;
     border-right: 2px solid lightgrey;
     text-align: center;
-    border: 1px solid black;
 
     img {
       height: 350px;
+      width: 85%;
+      object-fit: cover;
       margin: 0 auto;
     }
   }
   .status-container {
-    width: 50%;
-    padding: 20px;
-    border: 1px black solid;
+    width: 35%;
+    padding: 20px 50px;
+
+    p {
+      padding: 15px 0;
+    }
+    span {
+      font-size: 20px;
+    }
+
+    button {
+      width: 90%;
+      height: 45px;
+      background-color: $dark;
+      text-transform: uppercase;
+      color: lightgrey;
+      border: none;
+      padding: 5px;
+      border-radius: 3px;
+      font-weight: 500;
+    }
   }
   .progress {
     height: 30px;
+    width: 90%;
+    background-color: $dark;
   }
 }
 

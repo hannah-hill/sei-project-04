@@ -42,14 +42,24 @@ const ShowCampaign = () => {
         </div>
         <div className='status-container'>
           <ProgressBar animated now={450} max={data.target} variant='info' />
-          <p>£450 of £{data.target} pledged</p>
+          <p>
+            <span>
+              <strong>£450</strong>
+            </span>{' '}
+            of <strong>£{data.target}</strong> pledged
+          </p>
           {/* {data.supporters.length ? (
             <p>{data.supporters.length} supporters</p>
           ) : (
             <p>No supporters yet - be the first!</p>
           )} */}
-          <p>{daysLeft} days left</p>
-          <button>make a pledge</button>
+          <p>
+            <span>
+              <strong>{daysLeft}</strong>
+            </span>{' '}
+            days remaining
+          </p>
+          <button>support this campaign</button>
           <p>{data.category}</p>
           <p>{data.location}</p>
         </div>
