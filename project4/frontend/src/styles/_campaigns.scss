@@ -1,0 +1,112 @@
+.filters-container {
+  width: 100%;
+  height: 70px;
+  border-bottom: 1px solid lightgrey;
+  display: flex;
+  flex-direction: row;
+  font-family: $main;
+
+  .filter-by {
+    border-right: 1px solid lightgrey;
+    border-left: 1px solid lightgrey;
+    padding: 0 10px;
+    margin-left: 50px;
+    text-align: center;
+    line-height: 69px;
+    color: gray;
+    font-size: 14px;
+  }
+
+  .filter {
+    height: 100%;
+    border-right: 1px solid lightgrey;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+  }
+  .dropdown {
+    height: 100%;
+    border: none;
+    display: flex;
+    align-items: center;
+  }
+  button {
+    background: none;
+    border: none !important;
+    color: gray;
+    font-size: 14px !important;
+  }
+}
+
+.all-campaigns-container {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: 30px 50px;
+  background-color: #f4f7f6;
+  padding-top: 40px;
+}
+
+.campaign-card {
+  width: 27%;
+  height: 380px;
+  background-color: white;
+  color: $dark;
+
+  .card-img {
+    height: 230px;
+    width: 100%;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+  .card-title {
+    width: 100%;
+    padding: 0 20px;
+    padding-top: 10px;
+    background-color: white;
+
+    h4 {
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    a {
+      text-decoration: none;
+      color: $dark;
+      font-weight: 500;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    p {
+      font-size: 14px;
+    }
+  }
+
+  .card-details {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex end;
+    padding: 0 20px;
+    background-color: white;
+
+    p {
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 01;
+    }
+    .card-funding {
+      width: 50%;
+    }
+    .card-time {
+      width: 50%;
+      text-align: right;
+    }
+  }
+}

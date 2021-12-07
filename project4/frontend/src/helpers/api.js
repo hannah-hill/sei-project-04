@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { setToken } from './auth'
+import { setToken, getToken } from './auth'
 
 const baseUrl = '/api/'
 
@@ -22,6 +22,24 @@ export const fetchCampaign = async (id) => {
   }
   const response = await axios(config)
   return response.data
+}
+
+export const createCampaign = async (data) => {
+  const config = {
+    method: 'post',
+    url: `${baseUrl}/campaigns/`,
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${getToken()}`,
+    },
+    data: data,
+  }
+  try {
+    const response = await axios(config)
+    console.log(response.data)
+  } catch (err) {
+    console.log(err)
+  }
 }
 
 export const loginUser = async (data) => {

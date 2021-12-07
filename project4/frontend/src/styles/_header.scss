@@ -3,7 +3,8 @@ header {
   width: 100%;
   margin: 0;
   padding: 0;
-  border-bottom: 2px solid lightgrey;
+  border-bottom: 1px solid lightgrey;
+  background-color: $background;
 
   .header-container {
     width: 100%;
@@ -15,12 +16,23 @@ header {
     text-align: center;
 
     h1 {
-      color: $main;
-      font-family: $logo;
+      color: $dark;
+      font-family: $main;
+      font-weight: 900;
     }
 
     .header-left {
       width: 30%;
+      height: 100%;
+
+      .hamburger-container {
+        border-right: 1px solid lightgrey;
+        height: 100%;
+        width: 25%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
     }
     .header-right {
       width: 30%;
@@ -34,8 +46,12 @@ header {
         padding: 0 10px;
       }
     }
-    .header-center {
+    .header-centre {
       width: 30%;
+
+      a {
+        text-decoration: none;
+      }
     }
   }
 }

@@ -13,13 +13,15 @@ const Header = ({ loggedIn, handleLogout }) => {
             </div>
           </div>
           <div className='header-centre'>
-            <h1>Seedling</h1>
+            <Link to='/'>
+              <h1>crowd</h1>
+            </Link>
           </div>
           <div className='header-right'>
             {loggedIn ? (
               <>
                 <button onClick={handleLogout}>LOGOUT</button>
-                <button>ACCOUNT</button>
+                <button>START A PROJECT</button>
               </>
             ) : (
               <>

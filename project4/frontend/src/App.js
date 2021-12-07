@@ -9,6 +9,7 @@ import Header from './components/Header'
 import Home from './pages/Home'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
+import StartCampaign from './pages/StartCampaign'
 
 function App() {
   const [campaigns, setCampaigns] = useState([])
@@ -39,6 +40,10 @@ function App() {
         <main>
           <Routes>
             <Route path='/campaigns/:id' element={<ShowCampaign />} />
+            <Route
+              path='/campaigns/new'
+              element={<StartCampaign loggedIn={loggedIn} />}
+            />
             <Route path='/campaigns' element={<AllCampaigns />} />
             <Route path='/login' element={<Login />} />
             <Route path='/signup' element={<Signup />} />

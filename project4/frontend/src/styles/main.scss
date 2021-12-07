@@ -3,10 +3,17 @@
 @import 'header';
 @import 'nav';
 @import 'show-campaign';
+@import 'campaigns';
+@import 'start-campaign';
 @import '../../node_modules/bootstrap/scss/bootstrap';
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: $mulish;
+}
+
+main {
+  background-color: $background;
 }

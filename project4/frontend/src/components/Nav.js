@@ -17,6 +17,10 @@ const Nav = () => {
         <Offcanvas.Body>
           <nav>
             <ul className='nav-list'>
+              <li></li>
+              <Link to='/'>
+                <li>Home</li>
+              </Link>
               <Link to='/campaigns'>
                 <li>Browse campaigns</li>
               </Link>
