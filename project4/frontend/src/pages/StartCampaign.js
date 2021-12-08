@@ -19,7 +19,7 @@ const StartCampaign = () => {
   const handleSubmit = async (event) => {
     event.preventDefault()
     await createCampaign(data)
-    navigate('/campaigns')
+    navigate('/campaigns/')
   }
 
   const handleChange = ({ target }) => {

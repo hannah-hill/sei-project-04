@@ -60,7 +60,6 @@ class CampaignListView(APIView):
     def post(self, request):
         try:
             campaign = CampaignSerializer(data=request.data)
-            print(request.POST)
             print(campaign)
             if campaign.is_valid():
                 campaign.save(owner=request.user)
@@ -80,12 +79,12 @@ class CampaignListView(APIView):
 class PledgeView(APIView):
     def post(self, request, pk):
         try:
-            campaign = Campaign.objects.get(id=pk).id
+            campaign = Campaign.objects.get(id=pk)
             value = request.data['value']
-            user = request.user.id
-            print('HELLO,', campaign, user, value)
-            newPledge = CampaignSupporters.objects.create(user=user, value=value, campaign=campaign)
-            return Response(newPledge, status=status.HTTP_202_ACCEPTED)
-        except:
+            user = request.user
+            new_pledge = CampaignSupporters.objects.create(user=user, value=value, campaign=campaign)
+            return Response(new_pledge, status=status.HTTP_202_ACCEPTED)
+        except Exception as e:
+            print(e)
             return Response(status=status.HTTP_400_BAD_REQUEST)
 

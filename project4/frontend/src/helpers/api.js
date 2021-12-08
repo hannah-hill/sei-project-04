@@ -37,9 +37,40 @@ export const createCampaign = async (data) => {
   try {
     const response = await axios(config)
     console.log(response.data)
+    return response.data
   } catch (err) {
     console.log(err)
   }
+}
+
+export const editCampaign = async (id, data) => {
+  const config = {
+    method: 'put',
+    url: `${baseUrl}/campaigns/${id}/`,
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${getToken()}`,
+    },
+    data: data,
+  }
+  try {
+    const response = await axios(config)
+    console.log(response.data)
+  } catch (err) {
+    console.log(err)
+  }
+}
+
+export const deleteCampaign = async (id) => {
+  const config = {
+    method: 'delete',
+    url: `${baseUrl}/campaigns/${id}`,
+    headers: {
+      Authorization: `Bearer ${getToken()}`,
+    },
+  }
+  const response = await axios(config)
+  return response.data
 }
 
 export const loginUser = async (data) => {

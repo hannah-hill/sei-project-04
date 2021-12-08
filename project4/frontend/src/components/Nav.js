@@ -17,14 +17,15 @@ const Nav = () => {
         <Offcanvas.Body>
           <nav>
             <ul className='nav-list'>
-              <li></li>
               <Link to='/'>
-                <li>Home</li>
+                <li className='first-link'>Home</li>
               </Link>
               <Link to='/campaigns'>
                 <li>Browse campaigns</li>
               </Link>
-              <li>Start a campaign</li>
+              <Link to='/campaigns/new'>
+                <li>Start a campaign</li>
+              </Link>
               <li>Categories</li>
             </ul>
           </nav>

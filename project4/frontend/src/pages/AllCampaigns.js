@@ -32,7 +32,9 @@ const AllCampaigns = () => {
     <>
       <div className='filters-container'>
         <div className='filter-by'>
-          <p>Filter By</p>
+          <p>
+            <strong>Filter By</strong>
+          </p>
         </div>
         <div className='filter'>
           <Filter title='Location' actions={locationFilterActions} />

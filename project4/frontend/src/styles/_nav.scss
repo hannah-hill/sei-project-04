@@ -1,8 +1,34 @@
 .nav-list {
   list-style: none;
+  width: 100%;
+  padding: 0;
+  margin: 0;
   padding-top: 40px;
 
+  .first-link {
+    border-top: 1px solid lightgrey;
+  }
+
+  li {
+    border-bottom: 1px solid lightgrey;
+    padding: 20px 0 20px 30px;
+    width: 100%;
+  }
   a {
     text-decoration: none;
+    color: $dark;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
   }
+  a:hover {
+    text-decoration: underline;
+    color: $orange-1;
+  }
+}
+.offcanvas-start {
+  width: 350px !important;
+}
+.offcanvas-body {
+  padding: 0 !important;
 }

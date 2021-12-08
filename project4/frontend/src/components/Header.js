@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import LoginModal from './LoginModal'
 import Nav from './Nav'
 
-const Header = ({ loggedIn, handleLogout }) => {
+const Header = ({ loggedIn, handleLogout, setLoggedIn }) => {
+  const [show, setShow] = useState(false)
+
+  const handleClose = () => setShow(false)
+  const handleShow = () => setShow(true)
   return (
     <>
       <header>
@@ -21,18 +26,24 @@ const Header = ({ loggedIn, handleLogout }) => {
             {loggedIn ? (
               <>
                 <button onClick={handleLogout}>LOGOUT</button>
-                <button>START A PROJECT</button>
               </>
             ) : (
               <>
-                <Link to='/login'>
+                <button onClick={handleShow}>LOG IN / REGISTER</button>
+                <LoginModal
+                  show={show}
+                  handleClose={handleClose}
+                  loggedIn={loggedIn}
+                  setLoggedIn={setLoggedIn}
+                />
+                {/* <Link to='/login'>
                   <button>LOGIN</button>
-                </Link>
-                <Link to='/signup'>
-                  <button>SIGN UP</button>
-                </Link>
+                </Link> */}
               </>
             )}
+            <Link to='/campaigns/new'>
+              <button>START A CAMPAIGN</button>
+            </Link>
           </div>
         </div>
       </header>

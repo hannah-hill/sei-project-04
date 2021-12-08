@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router'
-import { fetchCampaign } from '../helpers/api'
+import { useParams, useNavigate } from 'react-router'
+import { deleteCampaign, fetchCampaign } from '../helpers/api'
 import ProgressBar from 'react-bootstrap/ProgressBar'
 import Tabs from 'react-bootstrap/Tabs'
 import Tab from 'react-bootstrap/Tab'
@@ -9,6 +9,7 @@ const ShowCampaign = () => {
   const [data, setData] = useState({})
   const [daysLeft, setDaysLeft] = useState(60)
   const { id } = useParams()
+  const navigate = useNavigate()
 
   useEffect(() => {
     fetchCampaign(id).then(setData)
@@ -30,11 +31,18 @@ const ShowCampaign = () => {
     setDaysLeft(final)
   }
 
+  const handleDelete = async (event) => {
+    event.preventDefault()
+    await deleteCampaign(id).then(navigate('/campaigns/'))
+  }
+
+  const handleClick = () => {}
+
   return (
     <>
       <div className='show-header'>
         <h2>{data.title}</h2>
-        <h3>{data.description}</h3>
+        <h3>{data.byline}</h3>
       </div>
       <section className='show-details'>
         <div className='img-container'>
@@ -74,6 +82,10 @@ const ShowCampaign = () => {
           <Tab eventKey='profile' title='Support'></Tab>
           <Tab eventKey='contact' title='Q&A'></Tab>
         </Tabs>
+        <div className='admin-section'>
+          <button onClick={handleClick}>Edit</button>
+          <button onClick={handleDelete}>Delete</button>
+        </div>
       </section>
     </>
   )

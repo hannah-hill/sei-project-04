@@ -10,6 +10,7 @@ import Home from './pages/Home'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
 import StartCampaign from './pages/StartCampaign'
+import EditCampaign from './pages/EditCampaign'
 
 function App() {
   const [campaigns, setCampaigns] = useState([])
@@ -39,13 +40,21 @@ function App() {
         />
         <main>
           <Routes>
+            <Route
+              path='/campaigns/:id/edit'
+              element={<EditCampaign loggedIn={loggedIn} />}
+            />
             <Route path='/campaigns/:id' element={<ShowCampaign />} />
+
             <Route
               path='/campaigns/new'
               element={<StartCampaign loggedIn={loggedIn} />}
             />
             <Route path='/campaigns' element={<AllCampaigns />} />
-            <Route path='/login' element={<Login />} />
+            <Route
+              path='/login'
+              element={<Login loggedIn={loggedIn} setLoggedIn={setLoggedIn} />}
+            />
             <Route path='/signup' element={<Signup />} />
             <Route path='/' element={<Home campaigns={campaigns} />} />
           </Routes>

@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router'
 import { loginUser } from '../helpers/api'
+import { getToken } from '../helpers/auth'
 
-const Login = () => {
+const Login = ({ loggedIn, setLoggedIn }) => {
   const [login, setLogin] = useState({})
+  const navigate = useNavigate()
 
   const handleChange = ({ target }) => {
     const { name, value } = target
@@ -15,7 +18,9 @@ const Login = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault
-    loginUser(login)
+    !loggedIn && loginUser(login)
+    getToken() ? setLoggedIn(true) : setLoggedIn(false)
+    navigate('/')
   }
 
   return (
