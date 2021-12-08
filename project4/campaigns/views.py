@@ -67,15 +67,6 @@ class CampaignListView(APIView):
         except:
             return Response(status=status.HTTP_422_UNPROCESSABLE_ENTITY)
 
-# class PledgeView(APIView):
-#     def post(self, request, pk):
-#         try:
-#             campaign = Campaign.objects.get(id=pk)
-#             campaign.supporters.add({"user": request.user.id, "value": request.data.value })
-#             return Response(status=status.HTTP_202_ACCEPTED)
-#         except:
-#             return Response(status=status.HTTP_400_BAD_REQUEST)
-
 class PledgeView(APIView):
     def post(self, request, pk):
         try:

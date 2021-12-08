@@ -16,7 +16,7 @@ const Nav = () => {
         <Offcanvas.Header></Offcanvas.Header>
         <Offcanvas.Body>
           <nav>
-            <ul className='nav-list'>
+            <ul className='nav-list' onClick={handleClose}>
               <Link to='/'>
                 <li className='first-link'>Home</li>
               </Link>

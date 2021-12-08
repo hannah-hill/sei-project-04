@@ -2,12 +2,14 @@ import React, { useState, useEffect } from 'react'
 import { fetchCampaigns } from '../helpers/api'
 import CampaignCard from '../components/CampaignCard'
 import Filter from '../components/Filter'
+import Spinner from 'react-bootstrap/Spinner'
 
 const AllCampaigns = () => {
   const [campaigns, setCampaigns] = useState([])
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    fetchCampaigns().then(setCampaigns)
+    fetchCampaigns().then(setCampaigns).then(setIsLoading(false))
   }, [])
 
   const locationFilterActions = [
@@ -30,36 +32,45 @@ const AllCampaigns = () => {
 
   return (
     <>
-      <div className='filters-container'>
-        <div className='filter-by'>
-          <p>
-            <strong>Filter By</strong>
-          </p>
-        </div>
-        <div className='filter'>
-          <Filter title='Location' actions={locationFilterActions} />
-        </div>
-        <div className='filter'>
-          <Filter title='Category' actions={categoryFilterActions} />
-        </div>
-        <div className='filter'>
-          <Filter title='Funding' actions={fundingFilterActions} />
-        </div>
-      </div>
-      {campaigns.length && (
+      {!isLoading ? (
         <>
-          <div className='all-campaigns-container'>
-            {campaigns.map((campaign) => {
-              return (
-                <div key={campaign.id} className='campaign-card'>
-                  <CampaignCard {...campaign} />
-                </div>
-              )
-            })}
+          <div className='filters-container'>
+            <div className='filter-by'>
+              <p>
+                <strong>Filter By</strong>
+              </p>
+            </div>
+            <div className='filter'>
+              <Filter title='Location' actions={locationFilterActions} />
+            </div>
+            <div className='filter'>
+              <Filter title='Category' actions={categoryFilterActions} />
+            </div>
+            <div className='filter'>
+              <Filter title='Funding' actions={fundingFilterActions} />
+            </div>
+          </div>
+          {campaigns.length && (
+            <>
+              <div className='all-campaigns-container'>
+                {campaigns.map((campaign) => {
+                  return (
+                    <div key={campaign.id} className='campaign-card'>
+                      <CampaignCard {...campaign} />
+                    </div>
+                  )
+                })}
+              </div>
+            </>
+          )}
+        </>
+      ) : (
+        <>
+          <div className='loading-container'>
+            <Spinner animation='border' role='status'></Spinner>
           </div>
         </>
       )}
-      <div></div>
     </>
   )
 }

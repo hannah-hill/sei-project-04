@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router'
 import { deleteCampaign, fetchCampaign } from '../helpers/api'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faMapMarkerAlt, faShapes } from '@fortawesome/free-solid-svg-icons'
 import ProgressBar from 'react-bootstrap/ProgressBar'
 import Tabs from 'react-bootstrap/Tabs'
 import Tab from 'react-bootstrap/Tab'
@@ -8,6 +10,7 @@ import Tab from 'react-bootstrap/Tab'
 const ShowCampaign = () => {
   const [data, setData] = useState({})
   const [daysLeft, setDaysLeft] = useState(60)
+  const [funding, setFunding] = useState(0)
   const { id } = useParams()
   const navigate = useNavigate()
 
@@ -16,6 +19,7 @@ const ShowCampaign = () => {
   }, [id])
 
   useEffect(() => {
+    data.funding && setFunding(data.funding.value__sum)
     const createdOn = new Date(data.created_on)
     countdown(createdOn, data.duration)
   }, [data])
@@ -49,18 +53,37 @@ const ShowCampaign = () => {
           <img src={data.header_img} className='main-img' />
         </div>
         <div className='status-container'>
-          <ProgressBar animated now={450} max={data.target} variant='info' />
-          <p>
-            <span>
-              <strong>£450</strong>
-            </span>{' '}
-            of <strong>£{data.target}</strong> pledged
-          </p>
-          {/* {data.supporters.length ? (
-            <p>{data.supporters.length} supporters</p>
+          <ProgressBar
+            animated
+            now={funding}
+            max={data.target}
+            variant='info'
+          />
+          {funding ? (
+            <p>
+              <span>
+                <strong>£{funding}</strong>
+              </span>{' '}
+              of <strong>£{data.target}</strong> pledged
+            </p>
+          ) : (
+            <p>
+              <span>
+                <strong>£0</strong>
+              </span>{' '}
+              of <strong>£{data.target}</strong> pledged
+            </p>
+          )}
+          {data.supporters ? (
+            <p>
+              <span>
+                <strong>{data.supporters.length}</strong>
+              </span>{' '}
+              supporters
+            </p>
           ) : (
             <p>No supporters yet - be the first!</p>
-          )} */}
+          )}
           <p>
             <span>
               <strong>{daysLeft}</strong>
@@ -68,8 +91,16 @@ const ShowCampaign = () => {
             days remaining
           </p>
           <button>support this campaign</button>
-          <p>{data.category}</p>
-          <p>{data.location}</p>
+          <div className='status-footer'>
+            <div className='icon-text-container'>
+              <FontAwesomeIcon icon={faShapes} />
+              <p>{data.category}</p>
+            </div>
+            <div className='icon-text-container'>
+              <FontAwesomeIcon icon={faMapMarkerAlt} />
+              <p>{data.location}</p>
+            </div>
+          </div>
         </div>
       </section>
       <section className='campaign-tabs'>
