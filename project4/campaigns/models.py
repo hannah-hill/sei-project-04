@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models import Sum
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db.models.deletion import CASCADE
 
@@ -23,13 +24,24 @@ class Campaign(models.Model):
     supporters = models.ManyToManyField("jwt_auth.User", through='CampaignSupporters', blank=True)
     owner = models.ForeignKey('jwt_auth.User', null=True, on_delete=CASCADE, related_name='owner_id')
 
+    def total(self):
+        funding = CampaignSupporters.objects.filter(campaign=self,).aggregate(Sum('value'))
+        print(funding)
+        return funding
+        
     def __str__(self):
 	    return self.title
+
+    
 
 class CampaignSupporters(models.Model):
     campaign = models.ForeignKey("campaigns.Campaign", on_delete=models.CASCADE)
     user = models.ForeignKey("jwt_auth.User", on_delete=models.CASCADE)
     value = models.IntegerField()
+
+    
+
+        
 
 
     

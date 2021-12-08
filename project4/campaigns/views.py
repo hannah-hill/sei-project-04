@@ -83,7 +83,7 @@ class PledgeView(APIView):
             value = request.data['value']
             user = request.user
             new_pledge = CampaignSupporters.objects.create(user=user, value=value, campaign=campaign)
-            return Response(new_pledge, status=status.HTTP_202_ACCEPTED)
+            return Response(status=status.HTTP_202_ACCEPTED)
         except Exception as e:
             print(e)
             return Response(status=status.HTTP_400_BAD_REQUEST)

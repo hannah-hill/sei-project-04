@@ -11,6 +11,10 @@ class CampaignSerializer(serializers.ModelSerializer):
 class PopulatedCampaignSerializer(CampaignSerializer):
     supporters = UserSerializer(many=True)
 
+    funding = serializers.ReadOnlyField(
+        source='total'
+    )
+
 class CampaignSupportersSerializer(serializers.ModelSerializer):
     class Meta:
         model = CampaignSupporters
