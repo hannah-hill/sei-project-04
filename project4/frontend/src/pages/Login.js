@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router'
 import { loginUser } from '../helpers/api'
 import { getToken } from '../helpers/auth'
 
-const Login = ({ loggedIn, setLoggedIn }) => {
+const Login = ({ loggedIn, setLoggedIn, setStep }) => {
   const [login, setLogin] = useState({})
-  const navigate = useNavigate()
+  const [error, setError] = useState(false)
 
   const handleChange = ({ target }) => {
     const { name, value } = target
@@ -18,16 +17,22 @@ const Login = ({ loggedIn, setLoggedIn }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault
-    !loggedIn && loginUser(login)
-    getToken() ? setLoggedIn(true) : setLoggedIn(false)
-    navigate('/')
+    if (!loggedIn) {
+      try {
+        loginUser(login)
+        getToken() ? setLoggedIn(true) : setLoggedIn(false)
+        setStep(1)
+      } catch (err) {
+        console.log(err)
+        setError(true)
+      }
+    }
   }
 
   return (
     <>
-      <h1>Log in</h1>
-      <div>
-        <form>
+      <form onSubmit={handleSubmit}>
+        <div className='form-container'>
           <input
             placeholder='email'
             type='email'
@@ -42,11 +47,12 @@ const Login = ({ loggedIn, setLoggedIn }) => {
             value={login.password || ''}
             onChange={handleChange}
           ></input>
-          <button type='button' onClick={handleSubmit}>
-            Submit
-          </button>
-        </form>
-      </div>
+          {error && <p>Something went wrong, please try again</p>}
+        </div>
+        <div className='start-submit'>
+          <input type='submit' value='LOGIN' />
+        </div>
+      </form>
     </>
   )
 }

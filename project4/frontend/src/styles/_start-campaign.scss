@@ -3,7 +3,9 @@ h2 {
   text-align: center;
   padding: 20px;
 }
-
+.start-form {
+  height: 100vh;
+}
 .start-breadcrumb {
   display: flex;
   justify-content: center;
@@ -22,6 +24,10 @@ h2 {
     font-size: 14px;
     line-height: 1.5;
     border-top: 8px solid $dark;
+  }
+  li:hover {
+    font-weight: 800;
+    cursor: pointer;
   }
   span {
     width: 100%;
@@ -75,7 +81,8 @@ h2 {
   margin: 0 auto;
   padding: 30px 0;
 
-  input {
+  input,
+  button {
     width: 100%;
     height: 50px;
     background: $dark;

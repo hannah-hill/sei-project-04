@@ -36,8 +36,7 @@ export const createCampaign = async (data) => {
   }
   try {
     const response = await axios(config)
-    console.log(response.data)
-    return response.data
+    return response.data.id
   } catch (err) {
     console.log(err)
   }
@@ -86,6 +85,24 @@ export const pledgeToCampaign = async (data, id) => {
   try {
     const response = await axios(config)
     console.log(response.data)
+  } catch (err) {
+    console.log(err)
+  }
+}
+
+export const createReward = async (data) => {
+  const config = {
+    method: 'post',
+    url: `${baseUrl}/pledges/`,
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${getToken()}`,
+    },
+    data: data,
+  }
+  try {
+    const response = await axios(config)
+    return response.data
   } catch (err) {
     console.log(err)
   }

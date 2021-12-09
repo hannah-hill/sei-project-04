@@ -65,7 +65,9 @@ class CampaignListView(APIView):
             print(campaign)
             if campaign.is_valid():
                 campaign.save(owner=request.user)
-                return Response(campaign.data, status=status.HTTP_201_CREATED)
+                return Response(campaign.data, status=status.HTTP_201_CREATED)          
+            else:
+                raise Exception('sorry, not a valid input')
         except Exception as e:
             print(e)
             return Response(status=status.HTTP_422_UNPROCESSABLE_ENTITY)

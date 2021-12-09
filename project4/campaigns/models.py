@@ -32,7 +32,6 @@ class Campaign(models.Model):
     
     def rewards(self):
         rewards = Pledge.objects.filter(campaign=self).order_by('value')
-        print(rewards)
         return rewards
         
     def __str__(self):
