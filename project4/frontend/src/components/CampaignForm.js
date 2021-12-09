@@ -8,6 +8,7 @@ const CampaignForm = ({ formProps }) => {
     <>
       <div className='form-container'>
         <form onSubmit={formProps.handleSubmit}>
+          <h3>Create your campaign</h3>
           <div>
             <FormInput
               displayAs='Campaign title'
@@ -45,21 +46,21 @@ const CampaignForm = ({ formProps }) => {
               displayAs='Location'
               name='location'
               type='text'
-              placeholder='city, country i.e. London, UK'
+              placeholder='format: city, country i.e. London, UK'
               {...formProps}
             />
             <FormInput
               displayAs='Campaign target'
               name='target'
               type='number'
-              placeholder='Your target funding in GBP'
+              placeholder='your target funding in GBP'
               {...formProps}
             />
             <FormInput
               displayAs='Campaign duration'
               name='duration'
               type='number'
-              placeholder='max.90 days'
+              placeholder='max. 90 days'
               {...formProps}
             />
           </div>

@@ -3,6 +3,8 @@ import { fetchCampaigns } from '../helpers/api'
 import CampaignCard from '../components/CampaignCard'
 import Filter from '../components/Filter'
 import Spinner from 'react-bootstrap/Spinner'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFilter } from '@fortawesome/free-solid-svg-icons'
 
 const AllCampaigns = () => {
   const [campaigns, setCampaigns] = useState([])
@@ -35,6 +37,9 @@ const AllCampaigns = () => {
       {!isLoading ? (
         <>
           <div className='filters-container'>
+            <div className='filter-icon'>
+              <FontAwesomeIcon icon={faFilter} />
+            </div>
             <div className='filter-by'>
               <p>
                 <strong>Filter By</strong>

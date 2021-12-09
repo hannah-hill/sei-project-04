@@ -39,6 +39,14 @@ h2 {
   margin: 0 auto;
   padding: 30px 70px;
 
+  h3 {
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+  }
+
   .field {
     display: flex;
     padding: 10px 0;

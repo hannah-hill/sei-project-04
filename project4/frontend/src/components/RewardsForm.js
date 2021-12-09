@@ -41,6 +41,7 @@ const RewardsForm = ({ id }) => {
     <div>
       <form onSubmit={handleSubmit}>
         <div className='form-container'>
+          <h3>Create your pledge rewards</h3>
           <FormInput
             displayAs='Reward title'
             name='title'

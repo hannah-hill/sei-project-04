@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router'
 import CampaignForm from '../components/CampaignForm'
 import RewardsForm from '../components/RewardsForm'
 import { createCampaign } from '../helpers/api'
-import Login from './Login'
+import Login from '../components/Login'
 
 const StartCampaign = ({ loggedIn, setLoggedIn }) => {
   const navigate = useNavigate()

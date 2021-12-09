@@ -25,6 +25,7 @@ const Login = ({ loggedIn, setLoggedIn, setStep }) => {
       } catch (err) {
         console.log(err)
         setError(true)
+        setStep(0)
       }
     }
   }
@@ -32,21 +33,28 @@ const Login = ({ loggedIn, setLoggedIn, setStep }) => {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <div className='form-container'>
-          <input
-            placeholder='email'
-            type='email'
-            name='email'
-            value={login.email || ''}
-            onChange={handleChange}
-          ></input>
-          <input
-            placeholder='password'
-            type='password'
-            name='password'
-            value={login.password || ''}
-            onChange={handleChange}
-          ></input>
+        <div className='form-container login'>
+          <h3>Log in</h3>
+          <div className='field'>
+            <label htmlFor='email'>Email</label>
+            <input
+              placeholder='email'
+              type='email'
+              name='email'
+              value={login.email || ''}
+              onChange={handleChange}
+            ></input>
+          </div>
+          <div className='field'>
+            <label htmlFor='password'>Password</label>
+            <input
+              placeholder='password'
+              type='password'
+              name='password'
+              value={login.password || ''}
+              onChange={handleChange}
+            ></input>
+          </div>
           {error && <p>Something went wrong, please try again</p>}
         </div>
         <div className='start-submit'>

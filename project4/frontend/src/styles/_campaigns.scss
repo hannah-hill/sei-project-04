@@ -6,11 +6,17 @@
   flex-direction: row;
   font-family: $main;
 
+  .filter-icon {
+    height: 100%;
+    width: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   .filter-by {
     border-right: 1px solid lightgrey;
     border-left: 1px solid lightgrey;
-    padding: 0 10px;
-    margin-left: 50px;
+    padding: 0 20px;
     text-align: center;
     line-height: 69px;
     color: $dark;
