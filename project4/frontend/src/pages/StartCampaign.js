@@ -39,17 +39,17 @@ const StartCampaign = () => {
         <ul className='start-breadcrumb'>
           <li>
             <span>
-              <strong>Step 1</strong>
+              <strong>Step 1</strong>: log in or sign up
             </span>
           </li>
           <li>
             <span>
-              <strong>Step 2</strong>
+              <strong>Step 2</strong>: create your campaign
             </span>
           </li>
           <li>
             <span>
-              <strong>Step 3</strong>
+              <strong>Step 3</strong>: create rewards for pledges
             </span>
           </li>
         </ul>

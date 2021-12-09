@@ -14,6 +14,11 @@ const SupportTab = ({ rewards, id }) => {
   }
   console.log(data.value)
 
+  const handleRewardClick = async (n) => {
+    setData({ value: n })
+    handleSubmit()
+  }
+
   const handleSubmit = () => {
     console.log(data)
     pledgeToCampaign(data, id)
@@ -41,7 +46,9 @@ const SupportTab = ({ rewards, id }) => {
               <p>
                 <span>£{reward.value}</span>
               </p>
-              <button>Continue</button>
+              <button onClick={() => handleRewardClick(reward.value)}>
+                Continue
+              </button>
             </div>
           )
         })}
