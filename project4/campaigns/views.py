@@ -33,7 +33,8 @@ class CampaignDetailView(APIView):
             if updated_campaign.is_valid():
                 updated_campaign.save()
                 return Response(updated_campaign.data, status=status.HTTP_202_ACCEPTED)
-        except:
+        except Exception as e:
+            print(e)
             return Response(campaign.errors, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
     
     def delete(self, request, pk):
@@ -54,7 +55,8 @@ class CampaignListView(APIView):
             campaigns = Campaign.objects.all()
             serialized_campaigns = PopulatedCampaignSerializer(campaigns, many=True)
             return Response(serialized_campaigns.data, status=status.HTTP_200_OK)
-        except: 
+        except Exception as e: 
+            print (e)
             return Response(status=status.HTTP_400_BAD_REQUEST)
     
     def post(self, request):
@@ -64,7 +66,8 @@ class CampaignListView(APIView):
             if campaign.is_valid():
                 campaign.save(owner=request.user)
                 return Response(campaign.data, status=status.HTTP_201_CREATED)
-        except:
+        except Exception as e:
+            print(e)
             return Response(status=status.HTTP_422_UNPROCESSABLE_ENTITY)
 
 class PledgeView(APIView):
@@ -72,6 +75,7 @@ class PledgeView(APIView):
         try:
             campaign = Campaign.objects.get(id=pk)
             value = request.data['value']
+            print(value)
             user = request.user
             new_pledge = CampaignSupporters.objects.create(user=user, value=value, campaign=campaign)
             return Response(status=status.HTTP_202_ACCEPTED)

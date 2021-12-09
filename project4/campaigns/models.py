@@ -3,6 +3,8 @@ from django.db.models import Sum
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db.models.deletion import CASCADE
 
+from pledges.models import Pledge
+
 # Create your models here.
 class Campaign(models.Model):
     title = models.CharField(max_length=100)
@@ -26,8 +28,12 @@ class Campaign(models.Model):
 
     def total(self):
         funding = CampaignSupporters.objects.filter(campaign=self,).aggregate(Sum('value'))
-        print(funding)
         return funding
+    
+    def rewards(self):
+        rewards = Pledge.objects.filter(campaign=self).order_by('value')
+        print(rewards)
+        return rewards
         
     def __str__(self):
 	    return self.title

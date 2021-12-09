@@ -24,10 +24,10 @@ const AllCampaigns = () => {
     { name: 'Tech', href: 'campaigns/' }
   ]
   const fundingFilterActions = [
-    { name: '0-25%', href: 'campaigns/' },
-    { name: '26-50%', href: 'campaigns/' },
-    { name: '51-75%', href: 'campaigns/' },
-    { name: '76%+', href: 'campaigns/' }
+    { name: '0% -25%', href: 'campaigns/' },
+    { name: '26% -50%', href: 'campaigns/' },
+    { name: '51% -75%', href: 'campaigns/' },
+    { name: '76% +', href: 'campaigns/' }
   ]
 
   return (

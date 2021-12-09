@@ -73,6 +73,24 @@ export const deleteCampaign = async (id) => {
   return response.data
 }
 
+export const pledgeToCampaign = async (data, id) => {
+  const config = {
+    method: 'post',
+    url: `${baseUrl}/campaigns/${id}/pledge/`,
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${getToken()}`,
+    },
+    data: data,
+  }
+  try {
+    const response = await axios(config)
+    console.log(response.data)
+  } catch (err) {
+    console.log(err)
+  }
+}
+
 export const loginUser = async (data) => {
   const config = {
     method: 'post',

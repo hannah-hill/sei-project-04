@@ -6,6 +6,8 @@ import { faMapMarkerAlt, faShapes } from '@fortawesome/free-solid-svg-icons'
 import ProgressBar from 'react-bootstrap/ProgressBar'
 import Tabs from 'react-bootstrap/Tabs'
 import Tab from 'react-bootstrap/Tab'
+import SupportTab from '../components/SupportTab'
+import StoryTab from '../components/StoryTab'
 
 const ShowCampaign = () => {
   const [data, setData] = useState({})
@@ -75,12 +77,21 @@ const ShowCampaign = () => {
             </p>
           )}
           {data.supporters ? (
-            <p>
-              <span>
-                <strong>{data.supporters.length}</strong>
-              </span>{' '}
-              supporters
-            </p>
+            data.supporters.length === 1 ? (
+              <p>
+                <span>
+                  <strong>1</strong>
+                </span>{' '}
+                supporter
+              </p>
+            ) : (
+              <p>
+                <span>
+                  <strong>{data.supporters.length}</strong>
+                </span>{' '}
+                supporters
+              </p>
+            )
           ) : (
             <p>No supporters yet - be the first!</p>
           )}
@@ -109,9 +120,13 @@ const ShowCampaign = () => {
           id='uncontrolled-tab-example'
           className='mb-3'
         >
-          <Tab eventKey='home' title='Description'></Tab>
-          <Tab eventKey='profile' title='Support'></Tab>
-          <Tab eventKey='contact' title='Q&A'></Tab>
+          <Tab eventKey='home' title='Story' default>
+            <StoryTab />
+          </Tab>
+          <Tab eventKey='profile' title='Support'>
+            {data.rewards && <SupportTab rewards={data.rewards} id={id} />}
+          </Tab>
+          <Tab eventKey='contact' title='Q&A' disabled></Tab>
         </Tabs>
         <div className='admin-section'>
           <button onClick={handleClick}>Edit</button>

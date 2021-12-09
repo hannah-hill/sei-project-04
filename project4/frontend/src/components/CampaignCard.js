@@ -8,7 +8,9 @@ const CampaignCard = (props) => {
   useEffect(() => {
     const createdOn = new Date(props.created_on)
     countdown(createdOn, props.duration)
-    setPercentageFunded((props.funded / props.target) * 100)
+    setPercentageFunded(
+      ((props.funding.value__sum / props.target) * 100).toFixed(0)
+    )
   }, [props])
 
   function countdown(date, days) {
@@ -33,7 +35,11 @@ const CampaignCard = (props) => {
       </div>
       <div className='card-details'>
         <div className='card-funding'>
-          <p>£{props.funded} pledged</p>
+          {props.funding.value__sum ? (
+            <p>£{props.funding.value__sum} pledged</p>
+          ) : (
+            <p>No pledges yet</p>
+          )}
           <p>{percentageFunded}% funded</p>
         </div>
         <div className='card-time'>
