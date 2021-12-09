@@ -11,6 +11,7 @@ import Home from './pages/Home'
 import Signup from './pages/Signup'
 import StartCampaign from './pages/StartCampaign'
 import EditCampaign from './pages/EditCampaign'
+import Footer from './components/Footer'
 
 function App() {
   const [campaigns, setCampaigns] = useState([])
@@ -61,6 +62,7 @@ function App() {
             <Route path='/' element={<Home campaigns={campaigns} />} />
           </Routes>
         </main>
+        <Footer />
       </Router>
     </>
   )

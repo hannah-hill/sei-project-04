@@ -38,7 +38,7 @@ const EditCampaign = () => {
 
   return (
     <section>
-      <div>
+      <div className='edit-container'>
         <form onSubmit={handleSubmit}>
           <div className='form-container'>
             <CampaignForm formProps={formProps} />

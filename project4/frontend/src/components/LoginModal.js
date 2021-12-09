@@ -4,6 +4,7 @@ import Button from 'react-bootstrap/Button'
 import { useNavigate } from 'react-router'
 import { loginUser } from '../helpers/api'
 import { getToken } from '../helpers/auth'
+import { Link } from 'react-router-dom'
 
 const LoginModal = ({ show, handleClose, loggedIn, setLoggedIn }) => {
   const [login, setLogin] = useState({})
@@ -33,7 +34,7 @@ const LoginModal = ({ show, handleClose, loggedIn, setLoggedIn }) => {
           <Modal.Title>Log in</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <div>
+          <div className='login-modal'>
             <form>
               <input
                 placeholder='email'
@@ -53,6 +54,9 @@ const LoginModal = ({ show, handleClose, loggedIn, setLoggedIn }) => {
                 Submit
               </button> */}
             </form>
+            <p>
+              Don&apos;t have an account? <Link to='/signup'>Sign up here</Link>
+            </p>
           </div>
         </Modal.Body>
         <Modal.Footer>

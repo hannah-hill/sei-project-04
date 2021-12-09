@@ -14,6 +14,27 @@ export const fetchCampaigns = async () => {
   return response.data
 }
 
+export const fetchTrendingCampaigns = async () => {
+  const config = {
+    method: 'get',
+    url: `${baseUrl}/campaigns/trending`,
+    headers: {},
+  }
+
+  const response = await axios(config)
+  return response.data
+}
+
+export const fetchCategories = async () => {
+  const config = {
+    method: 'get',
+    url: `${baseUrl}/campaigns/categories`,
+    headers: {},
+  }
+  const response = await axios(config)
+  return response.data
+}
+
 export const fetchCampaign = async (id) => {
   const config = {
     method: 'get',

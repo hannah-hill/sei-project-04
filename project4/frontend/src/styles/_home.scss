@@ -1,0 +1,115 @@
+.hero {
+  text-align: center;
+  padding: 40px 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url('https://i.imgur.com/fCjkWb8.jpg');
+  background-size: cover;
+  height: 350px;
+  background-position: center;
+  h2 {
+    font-size: 32px;
+    font-weight: 400;
+    padding: 5px 0;
+    color: #fcfcfc;
+  }
+  .hero-buttons {
+    display: flex;
+    justify-content: center;
+    column-gap: 20px;
+    align-items: center;
+    margin: 30px 0;
+
+    a {
+      background-color: #fcfcfc;
+      color: $dark;
+      height: 40px;
+      padding: 5px 10px;
+      border-radius: 5px;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    a:hover {
+      background-color: $dark;
+      color: $orange-1;
+    }
+  }
+}
+.trending-container {
+  padding: 40px 0;
+
+  h3 {
+    width: 90%;
+    margin: 0 auto;
+    font-size: 22px;
+    font-weight: 700;
+  }
+  .trending-campaigns {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    border-bottom: 2px solid lightgrey;
+  }
+  .campaign-card {
+    width: 32%;
+    height: 400px;
+  }
+}
+.bottom-container {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  padding-bottom: 70px;
+
+  .categories-container {
+    width: 50%;
+    border-right: 2px solid lightgrey;
+    height: 400px;
+
+    h3 {
+      margin: 0 auto;
+      font-size: 18px;
+      font-weight: 700;
+      display: block;
+    }
+    .categories-list {
+      width: 100%;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+
+      p {
+        text-transform: uppercase;
+        display: inline-block;
+        font-weight: 800;
+        padding: 50px;
+      }
+    }
+  }
+  .featured-container {
+    width: 50%;
+    height: 350px;
+    h3 {
+      margin: 0 auto;
+      width: 80%;
+      padding-bottom: 15px;
+      font-size: 18px;
+      font-weight: 700;
+      display: block;
+    }
+
+    .campaign-card {
+      width: 80%;
+      margin: 0 auto;
+
+      img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 3px;
+      }
+    }
+  }
+}

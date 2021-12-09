@@ -1,16 +1,14 @@
 from django.shortcuts import render
-
-# Create your views here.
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from django.http import HttpResponse
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-
-
+from django.db.models import Min
 from .models import Campaign, CampaignSupporters
 from jwt_auth.models import User
 from .serializers import CampaignSerializer, CampaignSupportersSerializer, PopulatedCampaignSerializer
+from campaigns import serializers
 
 def home(request):
     return HttpResponse('Hello world!')
@@ -52,7 +50,7 @@ class CampaignListView(APIView):
     # /GET all campaigns
     def get(self, request):
         try:
-            campaigns = Campaign.objects.all()
+            campaigns = Campaign.objects.all().order_by('title')
             serialized_campaigns = PopulatedCampaignSerializer(campaigns, many=True)
             return Response(serialized_campaigns.data, status=status.HTTP_200_OK)
         except Exception as e: 
@@ -84,4 +82,30 @@ class PledgeView(APIView):
         except Exception as e:
             print(e)
             return Response(status=status.HTTP_400_BAD_REQUEST)
+
+class CampaignTrendingView(APIView):
+      def get(self, request):
+        try:
+            campaigns = Campaign.objects.all().order_by('supporters').distinct()
+            serialized_campaigns = PopulatedCampaignSerializer(campaigns, many=True)
+            return Response(serialized_campaigns.data, status=status.HTTP_200_OK)
+        except Exception as e: 
+            print (e)
+            return Response(status=status.HTTP_400_BAD_REQUEST)
+
+class CategoryView(APIView):
+    def get(self, request):
+        try:
+            categories = Campaign.objects.order_by().values('category').distinct()
+            return Response(categories, status=status.HTTP_200_OK)
+        except Exception as e:
+            print(e)
+            return Response(status=status.HTTP_404_NOT_FOUND)
+
+
+
+
+
+
+
 

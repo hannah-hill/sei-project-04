@@ -24,7 +24,7 @@ class Campaign(models.Model):
     created_on = models.DateField(auto_now_add=True)
     duration = models.IntegerField(default=60, validators=[MaxValueValidator(90)])
     supporters = models.ManyToManyField("jwt_auth.User", through='CampaignSupporters', blank=True)
-    owner = models.ForeignKey('jwt_auth.User', null=True, on_delete=CASCADE, related_name='owner_id')
+    owner = models.ForeignKey('jwt_auth.User', null=True, on_delete=models.PROTECT, related_name='owner_id')
 
     def total(self):
         funding = CampaignSupporters.objects.filter(campaign=self,).aggregate(Sum('value'))
@@ -40,8 +40,8 @@ class Campaign(models.Model):
     
 
 class CampaignSupporters(models.Model):
-    campaign = models.ForeignKey("campaigns.Campaign", on_delete=models.CASCADE)
-    user = models.ForeignKey("jwt_auth.User", on_delete=models.CASCADE)
+    campaign = models.ForeignKey("campaigns.Campaign", on_delete=models.PROTECT)
+    user = models.ForeignKey("jwt_auth.User", on_delete=models.PROTECT)
     value = models.IntegerField()
 
     

@@ -20,8 +20,8 @@ const Signup = () => {
 
   return (
     <>
-      <h1>Log in</h1>
-      <div>
+      <h1>Sign up</h1>
+      <div className='form-container'>
         <form>
           <input
             placeholder='first name'

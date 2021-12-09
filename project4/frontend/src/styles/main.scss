@@ -1,10 +1,13 @@
 @import 'fonts';
 @import 'colors';
 @import 'header';
+@import 'footer';
 @import 'nav';
+@import 'home';
 @import 'show-campaign';
 @import 'campaigns';
 @import 'start-campaign';
+@import 'login-modal';
 @import '../../node_modules/bootstrap/scss/bootstrap';
 
 * {
@@ -16,4 +19,5 @@
 
 main {
   background-color: $background;
+  min-height: 100vh;
 }

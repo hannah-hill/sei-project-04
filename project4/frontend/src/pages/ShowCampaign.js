@@ -8,8 +8,13 @@ import Tabs from 'react-bootstrap/Tabs'
 import Tab from 'react-bootstrap/Tab'
 import SupportTab from '../components/SupportTab'
 import StoryTab from '../components/StoryTab'
+import Modal from 'react-bootstrap/Modal'
+import Button from 'react-bootstrap/Button'
 
 const ShowCampaign = () => {
+  const [show, setShow] = useState(false)
+  const handleClose = () => setShow(false)
+  const handleShow = () => setShow(true)
   const [data, setData] = useState({})
   const [daysLeft, setDaysLeft] = useState(60)
   const [funding, setFunding] = useState(0)
@@ -42,7 +47,9 @@ const ShowCampaign = () => {
     await deleteCampaign(id).then(navigate('/campaigns/'))
   }
 
-  const handleClick = () => {}
+  const handleClick = () => {
+    navigate(`/campaigns/${id}/edit`)
+  }
 
   return (
     <>
@@ -130,7 +137,22 @@ const ShowCampaign = () => {
         </Tabs>
         <div className='admin-section'>
           <button onClick={handleClick}>Edit</button>
-          <button onClick={handleDelete}>Delete</button>
+          <button onClick={handleShow}>Delete</button>
+          <>
+            <Modal show={show} onHide={handleClose}>
+              <Modal.Body>
+                Are you sure you want to delete this campaign?
+              </Modal.Body>
+              <Modal.Footer>
+                <Button variant='secondary' onClick={handleClose}>
+                  Cancel
+                </Button>
+                <Button variant='primary' onClick={handleDelete}>
+                  Continue
+                </Button>
+              </Modal.Footer>
+            </Modal>
+          </>
         </div>
       </section>
     </>
