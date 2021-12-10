@@ -90,6 +90,7 @@ export const deleteCampaign = async (id) => {
     },
   }
   const response = await axios(config)
+  console.log(response.data)
   return response.data
 }
 

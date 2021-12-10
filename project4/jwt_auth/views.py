@@ -11,12 +11,14 @@ User = get_user_model()
 class RegisterView(APIView):
 
     def post(self, request):
-        serializer = UserSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response({'message': 'Registration successful'})
-
-        return Response(serializer.errors, status=422)
+        try:
+            serializer = UserSerializer(data=request.data)
+            if serializer.is_valid():
+                serializer.save()
+                return Response({'message': 'Registration successful'})
+        except Exception as e:
+            print(e)
+            return Response(serializer.errors, status=422)
 
 
 class LoginView(APIView):

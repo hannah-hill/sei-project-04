@@ -11,7 +11,8 @@ const AllCampaigns = () => {
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    fetchCampaigns().then(setCampaigns).then(setIsLoading(false))
+    fetchCampaigns().then(setCampaigns)
+    setIsLoading(false)
   }, [])
 
   const locationFilterActions = [
@@ -34,7 +35,13 @@ const AllCampaigns = () => {
 
   return (
     <>
-      {!isLoading ? (
+      {isLoading ? (
+        <>
+          <div className='loading-container'>
+            <Spinner animation='border' role='status'></Spinner>
+          </div>
+        </>
+      ) : (
         <>
           <div className='filters-container'>
             <div className='filter-icon'>
@@ -68,12 +75,6 @@ const AllCampaigns = () => {
               </div>
             </>
           )}
-        </>
-      ) : (
-        <>
-          <div className='loading-container'>
-            <Spinner animation='border' role='status'></Spinner>
-          </div>
         </>
       )}
     </>

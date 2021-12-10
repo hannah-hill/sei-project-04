@@ -25,7 +25,7 @@ const Home = () => {
           <Link to='/campaigns/new/'>
             <p>Start a campaign</p>
           </Link>
-          <Link to='/campaigns/new/'>
+          <Link to='/campaigns/'>
             <p>Browse campaigns</p>
           </Link>
         </div>

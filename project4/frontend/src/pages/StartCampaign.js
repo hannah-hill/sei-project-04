@@ -13,7 +13,7 @@ const StartCampaign = ({ loggedIn, setLoggedIn }) => {
     byline: '',
     category: '',
     location: '',
-    header_img: '',
+    header_img: 'https://i.imgur.com/ZIJDpeq.jpg',
     target: '',
     duration: '',
     description: '',

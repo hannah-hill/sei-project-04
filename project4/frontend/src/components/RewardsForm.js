@@ -63,7 +63,7 @@ const RewardsForm = ({ id }) => {
             placeholder='set an amount in GBP for this reward'
             {...formProps}
           />
-          <div className='start-submit'>
+          <div className='add-submit'>
             <input type='submit' value='save and add another' />
           </div>
         </div>

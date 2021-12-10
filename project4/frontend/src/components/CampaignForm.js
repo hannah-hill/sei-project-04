@@ -6,8 +6,8 @@ import FormTextArea from './FormTextArea'
 const CampaignForm = ({ formProps }) => {
   return (
     <>
-      <div className='form-container'>
-        <form onSubmit={formProps.handleSubmit}>
+      <form onSubmit={formProps.handleSubmit}>
+        <div className='form-container'>
           <h3>Create your campaign</h3>
           <div>
             <FormInput
@@ -64,11 +64,11 @@ const CampaignForm = ({ formProps }) => {
               {...formProps}
             />
           </div>
-        </form>
-      </div>
-      <div className='start-submit'>
-        <input type='submit' value='NEXT' />
-      </div>
+        </div>
+        <div className='start-submit'>
+          <input type='submit' value='NEXT' />
+        </div>
+      </form>
     </>
   )
 }
