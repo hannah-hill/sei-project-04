@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { setToken, getToken } from './auth'
 
-const baseUrl = '/api/'
+const baseUrl = '/api'
 
 export const fetchCampaigns = async () => {
   const config = {
