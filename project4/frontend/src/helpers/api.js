@@ -17,7 +17,7 @@ export const fetchCampaigns = async () => {
 export const fetchTrendingCampaigns = async () => {
   const config = {
     method: 'get',
-    url: `${baseUrl}/campaigns/trending`,
+    url: `${baseUrl}/campaigns/trending/`,
     headers: {},
   }
 
@@ -28,7 +28,7 @@ export const fetchTrendingCampaigns = async () => {
 export const fetchCategories = async () => {
   const config = {
     method: 'get',
-    url: `${baseUrl}/campaigns/categories`,
+    url: `${baseUrl}/campaigns/categories/`,
     headers: {},
   }
   const response = await axios(config)
@@ -38,7 +38,7 @@ export const fetchCategories = async () => {
 export const fetchCampaign = async (id) => {
   const config = {
     method: 'get',
-    url: `${baseUrl}/campaigns/${id}`,
+    url: `${baseUrl}/campaigns/${id}/`,
     headers: {},
   }
   const response = await axios(config)
@@ -84,7 +84,7 @@ export const editCampaign = async (id, data) => {
 export const deleteCampaign = async (id) => {
   const config = {
     method: 'delete',
-    url: `${baseUrl}/campaigns/${id}`,
+    url: `${baseUrl}/campaigns/${id}/`,
     headers: {
       Authorization: `Bearer ${getToken()}`,
     },
