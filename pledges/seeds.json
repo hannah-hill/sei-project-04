@@ -1,0 +1,92 @@
+[
+{
+  "model": "pledges.pledge",
+  "pk": 1,
+  "fields": {
+    "title": "2 CARTONS & STICKERS",
+    "description": "Pledge £10 and we'll send you two cartons of our Boxed Water, and 100 stickers to share with your friends",
+    "value": 10,
+    "campaign": 2
+  }
+},
+{
+  "model": "pledges.pledge",
+  "pk": 2,
+  "fields": {
+    "title": "50 CARTONS & STICKERS",
+    "description": "50 cartons of Boxed Water for £50!",
+    "value": 50,
+    "campaign": 2
+  }
+},
+{
+  "model": "pledges.pledge",
+  "pk": 3,
+  "fields": {
+    "title": "100 PERSONALISED CARTONS",
+    "description": "For £100, we'll send you 100 cartons of our Boxed Water, with a custom design for you",
+    "value": 100,
+    "campaign": 2
+  }
+},
+{
+  "model": "pledges.pledge",
+  "pk": 4,
+  "fields": {
+    "title": "6 BEERS!",
+    "description": "Donate £10 and we'll send you a 6 pack of our new Clockwork Tangerine IPA.",
+    "value": 10,
+    "campaign": 3
+  }
+},
+{
+  "model": "pledges.pledge",
+  "pk": 5,
+  "fields": {
+    "title": "20 BEERS!",
+    "description": "Donate £50 and we'll send you a 20 pack of our new Clockwork Tangerine IPA.",
+    "value": 50,
+    "campaign": 3
+  }
+},
+{
+  "model": "pledges.pledge",
+  "pk": 6,
+  "fields": {
+    "title": "BEERS & BREWERY TOUR",
+    "description": "Pledge more than £100 and we'll give you 20 beers and a personal tour of our brewery, including a tasting!",
+    "value": 100,
+    "campaign": 3
+  }
+},
+{
+  "model": "pledges.pledge",
+  "pk": 7,
+  "fields": {
+    "title": "1 PACK",
+    "description": "One pack of our plant-based cookies in our newest flavour",
+    "value": 15,
+    "campaign": 5
+  }
+},
+{
+  "model": "pledges.pledge",
+  "pk": 8,
+  "fields": {
+    "title": "5 PACKS",
+    "description": "A variety pack of our cookies, one pack of each flavour",
+    "value": 40,
+    "campaign": 5
+  }
+},
+{
+  "model": "pledges.pledge",
+  "pk": 9,
+  "fields": {
+    "title": "10 PACKS",
+    "description": "A variety pack of our cookies, two packs of each flavour",
+    "value": 75,
+    "campaign": 5
+  }
+}
+]

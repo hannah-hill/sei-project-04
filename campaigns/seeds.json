@@ -1,0 +1,104 @@
+[
+{
+  "model": "campaigns.campaign",
+  "pk": 1,
+  "fields": {
+    "title": "A Generic Band!",
+    "category": "Music",
+    "location": "London, UK",
+    "byline": "Help us fund our next album!",
+    "description": "",
+    "header_img": "https://i.imgur.com/lFgq088.jpg",
+    "target": 1500,
+    "funded": 0,
+    "created_on": "2022-01-17",
+    "duration": 20,
+    "owner": 1
+  }
+},
+{
+  "model": "campaigns.campaign",
+  "pk": 2,
+  "fields": {
+    "title": "Boxed Water Is Better",
+    "category": "Food",
+    "location": "Michigan, USA",
+    "byline": "A sustainable alternative to plastic bottles and aluminium cans.",
+    "description": "A sustainable alternative to plastic bottles and aluminum cans, our cartons are 100% recylcable",
+    "header_img": "https://i.imgur.com/ptsxcww.jpg",
+    "target": 10000,
+    "funded": 0,
+    "created_on": "2022-01-17",
+    "duration": 23,
+    "owner": 1
+  }
+},
+{
+  "model": "campaigns.campaign",
+  "pk": 3,
+  "fields": {
+    "title": "Brewdog",
+    "category": "Food",
+    "location": "Aberdeen, UK",
+    "byline": "Crowdfunding for punks, we're raising money to launch our latest IPA",
+    "description": "Crowdfunding for punks, we're raising money to launch our latest IPA",
+    "header_img": "https://i.imgur.com/nl2WlbU.jpg",
+    "target": 18000,
+    "funded": 0,
+    "created_on": "2022-01-17",
+    "duration": 60,
+    "owner": 1
+  }
+},
+{
+  "model": "campaigns.campaign",
+  "pk": 4,
+  "fields": {
+    "title": "THE ODYSSEY: A Graphic Novel",
+    "category": "Publications",
+    "location": "Ithaca, GR",
+    "byline": "A worthy interpretation of Homer's immortal epic poem",
+    "description": "A worthy interpretation of Homer's immortal epic poem",
+    "header_img": "https://i.imgur.com/2qwL9k4.jpg",
+    "target": 2000,
+    "funded": 0,
+    "created_on": "2022-01-17",
+    "duration": 35,
+    "owner": 1
+  }
+},
+{
+  "model": "campaigns.campaign",
+  "pk": 5,
+  "fields": {
+    "title": "Brune Kitchen",
+    "category": "Food",
+    "location": "London, UK",
+    "byline": "Homemade cookies for the ultimate plant-based indulgence",
+    "description": "",
+    "header_img": "https://i.imgur.com/1Vp5tmF.jpg",
+    "target": 3000,
+    "funded": 0,
+    "created_on": "2022-01-17",
+    "duration": 45,
+    "owner": 1
+  }
+},
+{
+  "model": "campaigns.campaign",
+  "pk": 6,
+  "fields": {
+    "title": "The Ordinary",
+    "category": "Beauty",
+    "location": "New York, USA",
+    "byline": "An evolving collection of treatments offering familiar, effective, clinal technologies",
+    "description": "An evolving collection of treatments offering familiar, effective, clinal technologies",
+    "header_img": "https://i.imgur.com/d1J0H7H.jpg",
+    "target": 10000,
+    "funded": 0,
+    "created_on": "2022-01-17",
+    "duration": 20,
+    "owner": 1
+  }
+}
+]
