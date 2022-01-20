@@ -1,6 +1,8 @@
+from django.http import HttpResponse
 from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from rest_framework import status
 from rest_framework.exceptions import PermissionDenied
 from django.contrib.auth import get_user_model
 from django.conf import settings
@@ -15,10 +17,10 @@ class RegisterView(APIView):
             serializer = UserSerializer(data=request.data)
             if serializer.is_valid():
                 serializer.save()
-                return Response({'message': 'Registration successful'})
+            return Response({'message': 'Registration successful'}, status=status.HTTP_201_CREATED)
         except Exception as e:
             print(e)
-            return Response(serializer.errors, status=422)
+            return Response(status=status.HTTP_422_UNPROCESSABLE_ENTITY)
 
 
 class LoginView(APIView):
