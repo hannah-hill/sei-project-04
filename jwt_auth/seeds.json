@@ -1,0 +1,42 @@
+[
+{
+  "model": "jwt_auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$xJU1KseYd1RyWnv6Ia0bAu$0r29p/Or8vMZGBUFF9vWoES4UYugUL+HQUhbTnpYy1k=",
+    "last_login": "2022-01-21T11:16:57.217Z",
+    "is_superuser": true,
+    "username": "admin",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2022-01-21T11:12:45.272Z",
+    "email": "admin@email.com",
+    "first_name": "",
+    "last_name": "",
+    "profile_img": "",
+    "bio": "",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "pass123",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "hannah",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2022-01-21T11:25:10Z",
+    "email": "hannah@email.com",
+    "first_name": "Hannah",
+    "last_name": "H",
+    "profile_img": "",
+    "bio": "",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]
