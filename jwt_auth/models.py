@@ -10,6 +10,6 @@ class User(AbstractUser):
     bio = models.CharField(max_length=140, blank=True)
 
     def __str__(self):
-        return id
+        return self.username
     
     
