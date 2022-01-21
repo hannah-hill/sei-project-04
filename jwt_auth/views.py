@@ -13,6 +13,7 @@ User = get_user_model()
 class RegisterView(APIView):
 
     def post(self, request):
+        print(request)
         try:
             serializer = UserSerializer(data=request.data)
             if serializer.is_valid():
@@ -29,6 +30,7 @@ class LoginView(APIView):
         try:
             return User.objects.get(email=email)
         except User.DoesNotExist:
+            print('user does not exist')
             raise PermissionDenied({'message': 'Invalid credentials'})
 
     def post(self, request):
@@ -37,8 +39,9 @@ class LoginView(APIView):
         password = request.data.get('password')
 
         user = self.get_user(email)
+        print(user.email)
         if not user.check_password(password):
             raise PermissionDenied({'message': 'Invalid credentials'})
-
+            
         token = jwt.encode({'sub': user.id}, settings.SECRET_KEY, algorithm='HS256')
         return Response({'token': token, 'message': f'Welcome back {user.first_name}!'})

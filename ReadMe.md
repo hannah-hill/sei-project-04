@@ -8,7 +8,7 @@ This app has been deployed with Heroku and is available [here](https://hh-crowd.
 
 Note: Heroku servers are put to sleep after 30 minutes of inactivity, so the site may be slow to load on the first request. After this, it will behave normally.
 
-![home page](readme_images/image2.png)
+![screenshot of home page](readme_images/image2.png)
 
 ## TABLE OF CONTENTS
 
@@ -52,13 +52,13 @@ I settled on the idea of a crowdfunding website fairly quickly. I wanted to go b
 
 The first step in my planning process was to write user stories. Thinking about the final site from an end user’s perspective really helped me visualise the functionality I wanted to achieve and how to structure my product backlog. I used Trello to keep track of user stories and the development process:
 
-![trello](readme_images/image6.png)
+![screenshot of trello kanban](readme_images/image6.png)
 
 With the functionality defined, I used Lucidchart to map out my ERD, and Figma for endpoints and wireframing.
 
-![erd](readme_images/image1.png)
+![screenshot of entity relationship diagram](readme_images/image1.png)
 
-![wireframes](readme_images/image8.png)
+![screenshot of wireframes](readme_images/image8.png)
 
 ## <a name='backend'>BACKEND</a>
 
@@ -266,7 +266,7 @@ In terms of challenges, it initially took me a while to wrap my head around the 
 
 When you pledge to a campaign, the funding amount does not automatically update and you have to reload the page to see your pledge add to the total. I need to trigger the component to re-render after the ‘continue to payment’ modal.
 
-I also had some issues during deployment, and the content is currently not displaying correctly.
+The login functionality broke towards the end of development, with Django's built in `check_user()` method returning False when provided with correct credentials.
 
 ## <a name='improvements'>FUTURE IMPROVEMENTS</a>
 
