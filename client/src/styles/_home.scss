@@ -114,38 +114,3 @@
     }
   }
 }
-
-@media screen and (max-width: 600px) {
-  .hero {
-    width: 100vw;
-    height: 30vh;
-
-    .hero-buttons {
-      display: none;
-    }
-
-    h2 {
-      width: 80%;
-      font-size: 1.8rem;
-      margin: 0 auto;
-    }
-  }
-
-  .trending-container {
-    padding: 40px 0;
-
-    h3 {
-      width: 90%;
-      margin: 0 auto;
-      font-size: 22px;
-      font-weight: 700;
-    }
-    .trending-campaigns {
-      flex-direction: column;
-      row-gap: 2rem;
-    }
-    .campaign-card {
-      width: 100%;
-    }
-  }
-}

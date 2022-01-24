@@ -60,12 +60,3 @@ header {
   z-index: 1046;
   font-size: 12px;
 }
-
-@media screen and (max-width: 600px) {
-  .header-right button {
-    display: none;
-  }
-  .header-left .hamburger-container {
-    border: none;
-  }
-}

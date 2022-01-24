@@ -268,6 +268,8 @@ When you pledge to a campaign, the funding amount does not automatically update 
 
 The login functionality broke towards the end of development, with Django's built in `check_user()` method returning False when provided with correct credentials.
 
+The add a campaign form does not have responsive styling.
+
 ## <a name='improvements'>FUTURE IMPROVEMENTS</a>
 
 As mentioned above, I styled filters onto the browse all campaigns page, but these are not currently functional. I’d like to add in filtering by category, location, etc. Similarly, on the home page there is a list of all the categories currently used by campaigns - I would like to make these clickable to a filtered page.

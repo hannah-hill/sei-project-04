@@ -1,0 +1,93 @@
+@media screen and (max-width: 600px) {
+  header {
+    .header-container {
+      .header-right button {
+        display: none;
+      }
+      .header-left {
+        .hamburger-container {
+          border: none;
+        }
+      }
+    }
+  }
+
+  .hero {
+    width: 100vw;
+    height: 30vh;
+
+    .hero-buttons {
+      display: none;
+    }
+
+    h2 {
+      width: 80%;
+      font-size: 1.65rem;
+      margin: 0 auto;
+    }
+  }
+
+  .trending-container {
+    padding: 1rem 0 0.5rem 0;
+
+    h3 {
+      margin: 0 auto;
+      font-size: 1.3rem;
+      font-weight: 700;
+      text-align: center;
+    }
+    .trending-campaigns {
+      flex-direction: column;
+      row-gap: 2rem;
+    }
+    .campaign-card {
+      width: 100%;
+    }
+  }
+  .bottom-container {
+    flex-direction: column;
+    .categories-container {
+      width: 100%;
+      border: none;
+      border-bottom: 2px solid lightgray;
+      height: fit-content;
+
+      h3 {
+        font-size: 1.1rem;
+        text-align: center;
+        padding: 1rem 0;
+      }
+      .categories-list {
+        p {
+          padding: 1rem;
+        }
+      }
+    }
+    .featured-container {
+      width: 100%;
+      height: fit-content;
+      padding-top: 1.5rem;
+      h3 {
+        text-align: center;
+        font-size: 1.1rem;
+      }
+      .campaign-card {
+        width: 95%;
+      }
+    }
+  }
+  .filters-container {
+    .filter-by {
+      display: none;
+    }
+    .filter {
+      display: none;
+    }
+    .filter-icon {
+      border-right: 1px solid lightgray;
+    }
+  }
+  .campaign-card {
+    width: 90%;
+  }
+}
