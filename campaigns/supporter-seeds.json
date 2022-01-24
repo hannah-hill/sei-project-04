@@ -1,0 +1,542 @@
+[
+{
+  "model": "campaigns.campaignsupporters",
+  "pk": 1,
+  "fields": {
+    "campaign": 2,
+    "user": 1,
+    "value": 15
+  }
+},
+{
+  "model": "campaigns.campaignsupporters",
+  "pk": 2,
+  "fields": {
+    "campaign": 2,
+    "user": 1,
+    "value": 650
+  }
+},
+{
+  "model": "campaigns.campaignsupporters",
+  "pk": 3,
+  "fields": {
+    "campaign": 2,
+    "user": 1,
+    "value": 2300
+  }
+},
+{
+  "model": "campaigns.campaignsupporters",
+  "pk": 4,
+  "fields": {
+    "campaign": 2,
+    "user": 1,
+    "value": 200
+  }
+},
+{
+  "model": "campaigns.campaignsupporters",
+  "pk": 5,
+  "fields": {
+    "campaign": 2,
+    "user": 1,
+    "value": 200
+  }
+},
+{
+  "model": "campaigns.campaignsupporters",
+  "pk": 6,
+  "fields": {
+    "campaign": 2,
+    "user": 1,
+    "value": 200
+  }
+},
+{
+  "model": "campaigns.campaignsupporters",
+  "pk": 7,
+  "fields": {
+    "campaign": 2,
+    "user": 1,
+    "value": 5000
+  }
+},
+{
+  "model": "campaigns.campaignsupporters",
+  "pk": 8,
+  "fields": {
+    "campaign": 2,
+    "user": 1,
+    "value": 300
+  }
+},
+{
+  "model": "campaigns.campaignsupporters",
+  "pk": 9,
+  "fields": {
+    "campaign": 2,
+    "user": 1,
+    "value": 300
+  }
+},
+{
+  "model": "campaigns.campaignsupporters",
+  "pk": 10,
+  "fields": {
+    "campaign": 2,
+    "user": 1,
+    "value": 300
+  }
+},
+{
+  "model": "campaigns.campaignsupporters",
+  "pk": 11,
+  "fields": {
+    "campaign": 2,
+    "user": 1,
+    "value": 270
+  }
+},
+{
+  "model": "campaigns.campaignsupporters",
+  "pk": 12,
+  "fields": {
+    "campaign": 3,
+    "user": 1,
+    "value": 270
+  }
+},
+{
+  "model": "campaigns.campaignsupporters",
+  "pk": 13,
+  "fields": {
+    "campaign": 3,
+    "user": 1,
+    "value": 270
+  }
+},
+{
+  "model": "campaigns.campaignsupporters",
+  "pk": 14,
+  "fields": {
+    "campaign": 3,
+    "user": 1,
+    "value": 270
+  }
+},
+{
+  "model": "campaigns.campaignsupporters",
+  "pk": 15,
+  "fields": {
+    "campaign": 3,
+    "user": 1,
+    "value": 5000
+  }
+},
+{
+  "model": "campaigns.campaignsupporters",
+  "pk": 16,
+  "fields": {
+    "campaign": 3,
+    "user": 1,
+    "value": 3400
+  }
+},
+{
+  "model": "campaigns.campaignsupporters",
+  "pk": 17,
+  "fields": {
+    "campaign": 3,
+    "user": 1,
+    "value": 500
+  }
+},
+{
+  "model": "campaigns.campaignsupporters",
+  "pk": 18,
+  "fields": {
+    "campaign": 3,
+    "user": 1,
+    "value": 500
+  }
+},
+{
+  "model": "campaigns.campaignsupporters",
+  "pk": 19,
+  "fields": {
+    "campaign": 3,
+    "user": 1,
+    "value": 500
+  }
+},
+{
+  "model": "campaigns.campaignsupporters",
+  "pk": 20,
+  "fields": {
+    "campaign": 3,
+    "user": 1,
+    "value": 500
+  }
+},
+{
+  "model": "campaigns.campaignsupporters",
+  "pk": 21,
+  "fields": {
+    "campaign": 3,
+    "user": 1,
+    "value": 500
+  }
+},
+{
+  "model": "campaigns.campaignsupporters",
+  "pk": 22,
+  "fields": {
+    "campaign": 3,
+    "user": 1,
+    "value": 500
+  }
+},
+{
+  "model": "campaigns.campaignsupporters",
+  "pk": 23,
+  "fields": {
+    "campaign": 3,
+    "user": 1,
+    "value": 500
+  }
+},
+{
+  "model": "campaigns.campaignsupporters",
+  "pk": 24,
+  "fields": {
+    "campaign": 3,
+    "user": 1,
+    "value": 500
+  }
+},
+{
+  "model": "campaigns.campaignsupporters",
+  "pk": 25,
+  "fields": {
+    "campaign": 6,
+    "user": 1,
+    "value": 500
+  }
+},
+{
+  "model": "campaigns.campaignsupporters",
+  "pk": 26,
+  "fields": {
+    "campaign": 6,
+    "user": 1,
+    "value": 500
+  }
+},
+{
+  "model": "campaigns.campaignsupporters",
+  "pk": 27,
+  "fields": {
+    "campaign": 6,
+    "user": 1,
+    "value": 500
+  }
+},
+{
+  "model": "campaigns.campaignsupporters",
+  "pk": 28,
+  "fields": {
+    "campaign": 1,
+    "user": 1,
+    "value": 15
+  }
+},
+{
+  "model": "campaigns.campaignsupporters",
+  "pk": 29,
+  "fields": {
+    "campaign": 4,
+    "user": 1,
+    "value": 300
+  }
+},
+{
+  "model": "campaigns.campaignsupporters",
+  "pk": 30,
+  "fields": {
+    "campaign": 4,
+    "user": 1,
+    "value": 300
+  }
+},
+{
+  "model": "campaigns.campaignsupporters",
+  "pk": 31,
+  "fields": {
+    "campaign": 4,
+    "user": 1,
+    "value": 300
+  }
+},
+{
+  "model": "campaigns.campaignsupporters",
+  "pk": 32,
+  "fields": {
+    "campaign": 4,
+    "user": 1,
+    "value": 30
+  }
+},
+{
+  "model": "campaigns.campaignsupporters",
+  "pk": 33,
+  "fields": {
+    "campaign": 4,
+    "user": 1,
+    "value": 30
+  }
+},
+{
+  "model": "campaigns.campaignsupporters",
+  "pk": 34,
+  "fields": {
+    "campaign": 4,
+    "user": 1,
+    "value": 30
+  }
+},
+{
+  "model": "campaigns.campaignsupporters",
+  "pk": 35,
+  "fields": {
+    "campaign": 4,
+    "user": 1,
+    "value": 30
+  }
+},
+{
+  "model": "campaigns.campaignsupporters",
+  "pk": 36,
+  "fields": {
+    "campaign": 4,
+    "user": 1,
+    "value": 30
+  }
+},
+{
+  "model": "campaigns.campaignsupporters",
+  "pk": 37,
+  "fields": {
+    "campaign": 4,
+    "user": 1,
+    "value": 30
+  }
+},
+{
+  "model": "campaigns.campaignsupporters",
+  "pk": 38,
+  "fields": {
+    "campaign": 4,
+    "user": 1,
+    "value": 30
+  }
+},
+{
+  "model": "campaigns.campaignsupporters",
+  "pk": 39,
+  "fields": {
+    "campaign": 4,
+    "user": 1,
+    "value": 30
+  }
+},
+{
+  "model": "campaigns.campaignsupporters",
+  "pk": 40,
+  "fields": {
+    "campaign": 4,
+    "user": 1,
+    "value": 30
+  }
+},
+{
+  "model": "campaigns.campaignsupporters",
+  "pk": 41,
+  "fields": {
+    "campaign": 4,
+    "user": 1,
+    "value": 30
+  }
+},
+{
+  "model": "campaigns.campaignsupporters",
+  "pk": 42,
+  "fields": {
+    "campaign": 4,
+    "user": 1,
+    "value": 30
+  }
+},
+{
+  "model": "campaigns.campaignsupporters",
+  "pk": 43,
+  "fields": {
+    "campaign": 4,
+    "user": 1,
+    "value": 30
+  }
+},
+{
+  "model": "campaigns.campaignsupporters",
+  "pk": 44,
+  "fields": {
+    "campaign": 4,
+    "user": 1,
+    "value": 30
+  }
+},
+{
+  "model": "campaigns.campaignsupporters",
+  "pk": 45,
+  "fields": {
+    "campaign": 4,
+    "user": 1,
+    "value": 30
+  }
+},
+{
+  "model": "campaigns.campaignsupporters",
+  "pk": 46,
+  "fields": {
+    "campaign": 4,
+    "user": 1,
+    "value": 30
+  }
+},
+{
+  "model": "campaigns.campaignsupporters",
+  "pk": 47,
+  "fields": {
+    "campaign": 4,
+    "user": 1,
+    "value": 30
+  }
+},
+{
+  "model": "campaigns.campaignsupporters",
+  "pk": 48,
+  "fields": {
+    "campaign": 4,
+    "user": 1,
+    "value": 30
+  }
+},
+{
+  "model": "campaigns.campaignsupporters",
+  "pk": 49,
+  "fields": {
+    "campaign": 4,
+    "user": 1,
+    "value": 30
+  }
+},
+{
+  "model": "campaigns.campaignsupporters",
+  "pk": 50,
+  "fields": {
+    "campaign": 4,
+    "user": 1,
+    "value": 30
+  }
+},
+{
+  "model": "campaigns.campaignsupporters",
+  "pk": 51,
+  "fields": {
+    "campaign": 4,
+    "user": 1,
+    "value": 30
+  }
+},
+{
+  "model": "campaigns.campaignsupporters",
+  "pk": 52,
+  "fields": {
+    "campaign": 4,
+    "user": 1,
+    "value": 30
+  }
+},
+{
+  "model": "campaigns.campaignsupporters",
+  "pk": 53,
+  "fields": {
+    "campaign": 4,
+    "user": 1,
+    "value": 30
+  }
+},
+{
+  "model": "campaigns.campaignsupporters",
+  "pk": 54,
+  "fields": {
+    "campaign": 4,
+    "user": 1,
+    "value": 30
+  }
+},
+{
+  "model": "campaigns.campaignsupporters",
+  "pk": 55,
+  "fields": {
+    "campaign": 4,
+    "user": 1,
+    "value": 30
+  }
+},
+{
+  "model": "campaigns.campaignsupporters",
+  "pk": 56,
+  "fields": {
+    "campaign": 4,
+    "user": 1,
+    "value": 30
+  }
+},
+{
+  "model": "campaigns.campaignsupporters",
+  "pk": 57,
+  "fields": {
+    "campaign": 4,
+    "user": 1,
+    "value": 30
+  }
+},
+{
+  "model": "campaigns.campaignsupporters",
+  "pk": 58,
+  "fields": {
+    "campaign": 4,
+    "user": 1,
+    "value": 30
+  }
+},
+{
+  "model": "campaigns.campaignsupporters",
+  "pk": 59,
+  "fields": {
+    "campaign": 4,
+    "user": 1,
+    "value": 100
+  }
+},
+{
+  "model": "campaigns.campaignsupporters",
+  "pk": 60,
+  "fields": {
+    "campaign": 4,
+    "user": 1,
+    "value": 100
+  }
+}
+]

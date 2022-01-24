@@ -90,4 +90,73 @@
   .campaign-card {
     width: 90%;
   }
+
+  // SINGLE CAMPAIGN PAGE
+
+  .show-header {
+    padding: 1rem;
+    text-align: center;
+    h2 {
+      font-size: 1.2rem;
+    }
+    h3 {
+      font-size: 1rem;
+    }
+  }
+  .show-details {
+    height: fit-content;
+    flex-direction: column;
+    .img-container {
+      border: none;
+      width: 90%;
+      margin: 0 auto;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    .progress {
+      width: 100%;
+    }
+    .status-container {
+      width: 100%;
+      margin: 0 auto;
+      p {
+        font-size: 0.9rem;
+      }
+      span {
+        font-size: 1.05rem;
+      }
+      button {
+        width: 70%;
+        height: 1.8rem;
+        margin: 0 auto;
+        font-size: 0.9rem;
+        text-align: center;
+      }
+    }
+  }
+
+  .campaign-tabs {
+    .nav-tabs {
+      padding-top: 1rem;
+    }
+    .tab-container {
+      width: 90%;
+      padding: 1.5rem;
+    }
+  }
+  .reward-container {
+    width: 100%;
+    h4 {
+      font-size: 1.05rem;
+    }
+    p {
+      font-size: 0.9rem;
+    }
+  }
+  .admin-section {
+    padding: 1.5rem;
+  }
 }
