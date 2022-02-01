@@ -1,4 +1,6 @@
 import axios from 'axios'
+axios.defaults.xsrfHeaderName = 'X-CSRFTOKEN'
+axios.defaults.xsrfCookieName = 'csrftoken'
 import { setToken, getToken } from './auth'
 
 const baseUrl = '/api'
@@ -141,10 +143,12 @@ export const loginUser = async (data) => {
   }
   try {
     const response = await axios(config)
+    console.log(response)
     setToken(response.data.token)
     console.log(response)
   } catch (err) {
     console.log(err)
+    console.log('this didnt work')
   }
 }
 

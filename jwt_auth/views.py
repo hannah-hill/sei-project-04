@@ -28,18 +28,17 @@ class LoginView(APIView):
 
     def get_user(self, email):
         try:
+            print(email)
             return User.objects.get(email=email)
         except User.DoesNotExist:
-            print('user does not exist')
+            print(email)
             raise PermissionDenied({'message': 'Invalid credentials'})
 
     def post(self, request):
-
         email = request.data.get('email')
         password = request.data.get('password')
 
         user = self.get_user(email)
-        print(user.email)
         if not user.check_password(password):
             raise PermissionDenied({'message': 'Invalid credentials'})
             

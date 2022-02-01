@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Modal from 'react-bootstrap/Modal'
-import Button from 'react-bootstrap/Button'
+// import Button from 'react-bootstrap/Button'
 import { useNavigate } from 'react-router'
 import { loginUser } from '../helpers/api'
 import { getToken } from '../helpers/auth'
@@ -20,7 +20,7 @@ const LoginModal = ({ show, handleClose, loggedIn, setLoggedIn }) => {
   console.log(login)
 
   const handleSubmit = (event) => {
-    event.preventDefault
+    event.preventDefault()
     !loggedIn && loginUser(login)
     getToken() ? setLoggedIn(true) : setLoggedIn(false)
     navigate('/')
@@ -35,24 +35,22 @@ const LoginModal = ({ show, handleClose, loggedIn, setLoggedIn }) => {
         </Modal.Header>
         <Modal.Body>
           <div className='login-modal'>
-            <form>
+            <form onSubmit={handleSubmit}>
               <input
-                placeholder='email'
                 type='email'
+                placeholder='email'
                 name='email'
                 value={login.email || ''}
                 onChange={handleChange}
-              ></input>
+              />
               <input
                 placeholder='password'
                 type='password'
                 name='password'
                 value={login.password || ''}
                 onChange={handleChange}
-              ></input>
-              {/* <button type='button' onClick={handleSubmit}>
-                Submit
-              </button> */}
+              />
+              <input type='submit' value='Submit' />
             </form>
             <p>
               Don&apos;t have an account? <Link to='/signup'>Sign up here</Link>
@@ -60,12 +58,12 @@ const LoginModal = ({ show, handleClose, loggedIn, setLoggedIn }) => {
           </div>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant='secondary' onClick={handleClose}>
+          {/* <Button type="button" variant='secondary' onClick={handleClose}>
             Close
           </Button>
           <Button variant='primary' onClick={handleSubmit}>
-            Log in
-          </Button>
+          hello
+          </Button> */}
         </Modal.Footer>
       </Modal>
     </>
