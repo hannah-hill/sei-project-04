@@ -34,8 +34,6 @@ const StartCampaign = ({ loggedIn, setLoggedIn }) => {
       navigate('/campaigns/')
     }
   }
-  // console.log(data)
-  console.log('id! --> ', id)
 
   const handleChange = ({ target }) => {
     const { name, value } = target

@@ -12,8 +12,6 @@ const Home = () => {
     fetchCategories().then(setCategories)
   }, [])
 
-  console.log(trendingCampaigns)
-
   return (
     <>
       <div className='hero'>

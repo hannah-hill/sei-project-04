@@ -17,7 +17,6 @@ const LoginModal = ({ show, handleClose, loggedIn, setLoggedIn }) => {
       [name]: value,
     }))
   }
-  console.log(login)
 
   const handleSubmit = (event) => {
     event.preventDefault()

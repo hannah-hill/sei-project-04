@@ -22,6 +22,7 @@ const Header = ({ loggedIn, handleLogout, setLoggedIn }) => {
               <h1>crowd</h1>
             </Link>
           </div>
+
           <div className='header-right'>
             {loggedIn ? (
               <>

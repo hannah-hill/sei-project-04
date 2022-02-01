@@ -20,7 +20,6 @@ function App() {
   useEffect(() => {
     fetchCampaigns().then(setCampaigns)
   }, [])
-  campaigns.length && console.log(campaigns)
 
   useEffect(() => {
     getToken() ? setLoggedIn(true) : setLoggedIn(false)

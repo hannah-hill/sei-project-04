@@ -18,7 +18,6 @@ const SupportTab = ({ rewards, id }) => {
       [name]: value,
     })
   }
-  console.log(data.value)
 
   const handleRewardClick = async (n) => {
     setData({ value: n })

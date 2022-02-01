@@ -31,8 +31,6 @@ const ShowCampaign = () => {
     countdown(createdOn, data.duration)
   }, [data])
 
-  console.log('CAMPAIGN DATA -->', data)
-
   function countdown(date, days) {
     const today = new Date()
     const deadline = new Date(date)

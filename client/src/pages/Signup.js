@@ -11,7 +11,6 @@ const Signup = () => {
       [name]: value,
     }))
   }
-  console.log(register)
 
   const handleSubmit = (event) => {
     event.preventDefault()
